@@ -4,62 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEEDED DATA </title>
+    <title>Document</title>
+
+    <style>
+        .error {
+              color: red;
+              display: none;
+          }
+          .display-error {
+              display: block;
+          }
+          .success {
+              color: green;
+              display: none;
+          }
+          .failure{
+              color:red;
+              display:none;
+                  }
+          .display-success {
+              display: block;
+          }
+  </style>
+
 </head>
 <body style="text-align: center;margin:5%;background-color:#9E4784">
-    <!-- <h1 id="demo">arrays and objects</h1> -->
-<style>
-      .error {
-            color: red;
-            display: none;
-        }
-        .display-error {
-            display: block;
-        }
-        .success {
-            color: green;
-            display: none;
-        }
-        .failure{
-            color:red;
-            display:none;
-                }
-        .display-success {
-            display: block;
-        }
-</style>
+    <h2 id="demo2">All data </h2>
+    <h1 id="demo">arrays and objects</h1>
+    
+    <P>(NAME,DESIGNATION,MOBILE,ADHAR,HRMS,CFMS)</P>
+
 
     <form name="sign-up-form" action="" method="post" autocomplete="off">
         <p class="success  register-success"></p>
-
         <label style="color:white">Username</label>
-        <br>
-        <input id="username" value=""name="username" type="text">
+        <br><br>
+        <input id="username" value="" type="username">
         <br>
         <p class="error username-error"></p>
-        <br>
+        <br><br>
         <label style="color:white">Password</label>
-        <br>
-        <input id="password" value=""name="password" type="password">
+        <br><br>
+        <input id="password" value="" type="password">
         <br>
         <p class="error password-error"></p>
-        <br>
-        <input type="submit"   name="register-submission" value="sankar"       style="background-color: blue;color:white;" id="submit" onclick="javascript:sankarEdu()" type="submit">
-        <input type="submit"  name="register-submission" value="surendra"      style="background-color: red;color:white;" id="submit" onclick="javascript:surendraPLAN()" type="submit">
-        <input type="submit"  name="register-submission" value="admin"      style="background-color: green;color:white;"id="submit" onclick="javascript:eADMIN()" type="submit">
         <br><br>
-        <input type="submit"  name="register-submission" value="SankarAll"    style="background-color: blue;color:white;" id="submit" onclick="javascript:allData()" type="submit">
-        <input type="submit"  name="register-submission" value="surendraall"    style="background-color: red;color:white;" id="submit" onclick="javascript:surendraPLAN()" type="submit">
-        <input type="submit"  name="register-submission" value="admin all"    style="background-color: green;color:white;"id="submit" onclick="javascript:eADMIN()" type="submit">
-        <BR><BR>
-        <input id="input" type="input" value=""placeholder="what do you want ?" name="inputval"> 
-        <P>(NAME,DESIGNATION,HRMS,CFMS,MOBILE,ADHAR)</P>
-
-        <p id="displayName"></p>
-        <p id="displayAll"></p>    
-
+        <input id="specify" value=""placeholder="enter what you want?">
+        <br><br>
+        <button style="background-color: blue;color:white;" id="submit" onclick="javascript:sankarEdu()" type="submit">Sankar</button>
+        <button style="background-color: red;color:white;" id="submit" onclick="javascript:surendraPLAN()" type="submit">surendra</button>
+        <button style="background-color: green;color:white;"id="submit" onclick="javascript:eADMIN()" type="submit">admin</button>
+        <br><br>
+        <button style="background-color: blue;color:white;" id="submit" onclick="javascript:allEdu()" type="submit">SankarAll</button>
+        <button style="background-color: red;color:white;" id="submit" onclick="javascript:allPLAN()" type="submit">surendraAll</button>
+        <button style="background-color: green;color:white;"id="submit" onclick="javascript:allADMIN()" type="submit">adminAll</button>
         <p class="failure  register-failure"></p>
     </form>
+    
+
     <!-- <form id="form-test">
         <label>Username</label>
         <br><br>
@@ -99,6 +101,7 @@
             HRMS:"1259144",
             MOBILE:"9581171303",
             ADHAR:"367500637210",
+            JOININGDATE:"2019nov27",
             },
         ADMIN:{
             NAME:"B ESWAR REDDY",
@@ -130,14 +133,14 @@
    var sankar= document.getElementById('sankar');
    var admin=document.getElementById('admin');
    var surendra=document.getElementById('surendra');
-    
-    function allData(){
-    if(userName==='sankar'&&passWord==="SANKAR"){
-        var Alldata=document.getElementById('displayAll').innerText= "NAME: " + vinayakanagar.Education.NAME+" "  +"DESIGNATION: "+vinayakanagar.Education.DESIGNATION+" " +"DOB:"+vinayakanagar.Education.DOB+ +"CFMS: "+vinayakanagar.Education.CFMS+" " +"HRMS: "+vinayakanagar.Education.HRMS+" " +"MOBILE: " + vinayakanagar.Education.MOBILE+" " +" ADHAR: " + vinayakanagar.Education.ADHAR;
 
-    }
-//ERROR MESSAGE CODE 
-        function showError(errorElement, errorMessage) {
+        function allEdu(e){
+            if(   document.getElementById("username").value == "sankar" && document.getElementById("password").value == "SANKAR" ){
+
+            document.getElementById("demo2").innerHTML="NAME: "+vinayakanagar.Education.NAME+"<br>" +"DESIGNATION: "+vinayakanagar.Education.DESIGNATION+"<br> "+"DOB:"+vinayakanagar.Education.DOB+"<br> "+"CFMS: "+vinayakanagar.Education.CFMS+"<br> "+"HRMS: "+vinayakanagar.Education.HRMS+"<br> "+"MOBILE: " +vinayakanagar.Education.MOBILE+"<br> "+" ADHAR: " + vinayakanagar.Education.ADHAR+"<br>"+vinayakanagar.Education.JOININGDATE;
+            document.getElementById('demo2').style.color='white';
+            }
+            function showError(errorElement, errorMessage) {
             document.querySelector("." + errorElement).classList.add("display-error");
             document.querySelector("." + errorElement).innerHTML = errorMessage;
         }
@@ -163,15 +166,13 @@
                 showError('password-error', "Please enter a password.");
                 event.preventDefault();
             }
-
             if (form.username.value !== ""&&form.username.value==="sankar" && form.password.value !== ""&&form.password.value==="SANKAR") {
                 // Do form submission
                 document.querySelector(".register-success").classList.add("display-success");
                 document.querySelector(".register-success").innerHTML = "Registration successful!";
                 event.preventDefault();
 
-
-                // experiment for clear error credentials
+// experiment for clear error credentials
 
 
 let errors = document.querySelectorAll('.failure');
@@ -179,6 +180,8 @@ let errors = document.querySelectorAll('.failure');
             errors[i].classList.remove('display-error');
             errors[i].innerHTML = '';
         }
+
+
             }
             if (form.username.value !== ""&&form.username.value!=="sankar" && form.password.value !== ""&&form.password.value!=="SANKAR") {
                 // Do form submission
@@ -186,36 +189,38 @@ let errors = document.querySelectorAll('.failure');
                 document.querySelector(".failure").innerHTML = "WRONG CREDENTIALS";
                 event.preventDefault();
 
-            }
-            // if(form.username.value!=="sankar"&&form.username.value!=="SANKAR"){
-            //     var audio=new Audio('wrongpassword.mp3');
-            //     audio.play();
-            // }
-           
+
+// remove success statement if credentials are wrong
+
+
+let errors = document.querySelectorAll('.register-success');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
         }
-    //END OF ERROR MESSAGE CODE
+
+
+        
+
+
+            }
+        }
+        }
+
+
+
+
+   function sankarEdu(e){
     
-    }
-
-   function sankarEdu(){
-
-
-
-
-
-
-
     if(   document.getElementById("username").value == "sankar" && document.getElementById("password").value == "SANKAR" ){
-                                                               
-    //  var result1="NAME: "+vinayakanagar.Education.NAME+"<br>" +"DESIGNATION: "+vinayakanagar.Education.DESIGNATION+"<br> "+"DOB:"+vinayakanagar.Education.DOB+"<br> "+"CFMS: "+vinayakanagar.Education.CFMS+"<br> "+"HRMS: "+vinayakanagar.Education.HRMS+"<br> "+"MOBILE: " +vinayakanagar.Education.MOBILE+"<br> "+" ADHAR: " + vinayakanagar.Education.ADHAR;
-                         
-    let  sankar = document.getElementById('input').value.toUpperCase();
-    let result = vinayakanagar.Education[sankar];
-    document.getElementById("displayName").textContent = result;
-    
-}
+           let info=document.getElementById('specify').value.toUpperCase();
+           let result=vinayakanagar.Education[info];
+        
+           document.getElementById('demo').textContent=result; 
+            document.getElementById('demo').style.color='white';
+            
 
-//ERROR MESSAGE CODE 
+}
 
 function showError(errorElement, errorMessage) {
             document.querySelector("." + errorElement).classList.add("display-error");
@@ -243,7 +248,6 @@ function showError(errorElement, errorMessage) {
                 showError('password-error', "Please enter a password.");
                 event.preventDefault();
             }
-
             if (form.username.value !== ""&&form.username.value==="sankar" && form.password.value !== ""&&form.password.value==="SANKAR") {
                 // Do form submission
                 document.querySelector(".register-success").classList.add("display-success");
@@ -251,7 +255,7 @@ function showError(errorElement, errorMessage) {
                 event.preventDefault();
 
 
-                // experiment for clear error credentials
+// experiment for clear error credentials
 
 
 let errors = document.querySelectorAll('.failure');
@@ -259,6 +263,7 @@ let errors = document.querySelectorAll('.failure');
             errors[i].classList.remove('display-error');
             errors[i].innerHTML = '';
         }
+
             }
             if (form.username.value !== ""&&form.username.value!=="sankar" && form.password.value !== ""&&form.password.value!=="SANKAR") {
                 // Do form submission
@@ -266,31 +271,31 @@ let errors = document.querySelectorAll('.failure');
                 document.querySelector(".failure").innerHTML = "WRONG CREDENTIALS";
                 event.preventDefault();
 
-            }
+
+                // remove success statement if credentials are wrong
+
+
+let errors = document.querySelectorAll('.register-success');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
         }
-        //ERROR MESSAGE CODE END 
+
+            }
+            }
 
    }
 
 
 
 
-
-   function eADMIN(){
-
-    
-
+   function allADMIN(e){
     if(   document.getElementById("username").value == "Eswar"
 && document.getElementById("password").value == "Admin" ){
-    // document.write("NAME: "+vinayakanagar.ADMIN.NAME+"<br>" +"DESIGNATION: "+vinayakanagar.ADMIN.DESIGNATION+"<br> "+"DOB:"+vinayakanagar.ADMIN.DOB+"<br> "+"CFMS: "+vinayakanagar.ADMIN.CFMS+"<br> "+"HRMS: "+vinayakanagar.ADMIN.HRMS+"<br> "+"MOBILE: " +vinayakanagar.ADMIN.MOBILE+"<br> "+" ADHAR: " + vinayakanagar.ADMIN.ADHAR);
-    let  sankar = document.getElementById('input').valuetoUpperCase();
-    let result = vinayakanagar.ADMIN[sankar];
-    document.getElementById("displayName").textContent = result;   
-}
-
-
-//error message code
-function showError(errorElement, errorMessage) {
+            document.getElementById("demo2").innerHTML="NAME: "+vinayakanagar.ADMIN.NAME+"<br>" +"DESIGNATION: "+vinayakanagar.ADMIN.DESIGNATION+"<br> "+"DOB:"+vinayakanagar.ADMIN.DOB+"<br> "+"CFMS: "+vinayakanagar.ADMIN.CFMS+"<br> "+"HRMS: "+vinayakanagar.ADMIN.HRMS+"<br> "+"MOBILE: " +vinayakanagar.ADMIN.MOBILE+"<br> "+" ADHAR: " + vinayakanagar.ADMIN.ADHAR;
+            document.getElementById('demo2').style.color='white';
+            }
+            function showError(errorElement, errorMessage) {
             document.querySelector("." + errorElement).classList.add("display-error");
             document.querySelector("." + errorElement).innerHTML = errorMessage;
         }
@@ -316,15 +321,14 @@ function showError(errorElement, errorMessage) {
                 showError('password-error', "Please enter a password.");
                 event.preventDefault();
             }
-
-            if (form.username.value !== ""&&form.username.value==="Admin" && form.password.value !== ""&&form.password.value==="Eswar") {
+            if (form.username.value !== ""&&form.username.value==="Eswar" && form.password.value !== ""&&form.password.value==="Admin") {
                 // Do form submission
                 document.querySelector(".register-success").classList.add("display-success");
                 document.querySelector(".register-success").innerHTML = "Registration successful!";
                 event.preventDefault();
 
 
-                // experiment for clear error credentials
+// experiment for clear error credentials
 
 
 let errors = document.querySelectorAll('.failure');
@@ -332,37 +336,117 @@ let errors = document.querySelectorAll('.failure');
             errors[i].classList.remove('display-error');
             errors[i].innerHTML = '';
         }
+
             }
-            if (form.username.value !== ""&&form.username.value!=="Admin" && form.password.value !== ""&&form.password.value!=="Eswar") {
+            if (form.username.value !== ""&&form.username.value!=="Eswar" && form.password.value !== ""&&form.password.value!=="Admin") {
                 // Do form submission
                 document.querySelector(".failure").classList.add("display-success");
                 document.querySelector(".failure").innerHTML = "WRONG CREDENTIALS";
                 event.preventDefault();
 
+
+                // remove success statement if credentials are wrong
+
+
+let errors = document.querySelectorAll('.register-success');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
+        }
+
+            }
             }
         }
 
 
 
-//end of error message code
 
 
+   function eADMIN(e){
+    
+    if(   document.getElementById("username").value == "Eswar"
+&& document.getElementById("password").value == "Admin" ){
+
+    let info=document.getElementById('specify').value.toUpperCase();
+           let result=vinayakanagar.ADMIN[info];
+        
+           document.getElementById('demo').textContent=result; 
+            document.getElementById('demo').style.color='white';
+
+   }
+   function showError(errorElement, errorMessage) {
+            document.querySelector("." + errorElement).classList.add("display-error");
+            document.querySelector("." + errorElement).innerHTML = errorMessage;
+        }
+
+        function clearError() {
+            let errors = document.querySelectorAll('.error');
+            for (let error of errors) {
+                error.classList.remove("display-error");
+            }
+        }
+
+        let form = document.forms['sign-up-form'];
+
+        form.onsubmit = function(event) {
+            clearError();
+
+            if (form.username.value === "") {
+                showError('username-error', "Please enter a username.");
+                event.preventDefault();
+            }
+
+            if (form.password.value === "") {
+                showError('password-error', "Please enter a password.");
+                event.preventDefault();
+            }
+            if (form.username.value !== ""&&form.username.value==="Eswar" && form.password.value !== ""&&form.password.value==="Admin") {
+                // Do form submission
+                document.querySelector(".register-success").classList.add("display-success");
+                document.querySelector(".register-success").innerHTML = "Registration successful!";
+                event.preventDefault();
 
 
-  
+// experiment for clear error credentials
+
+
+let errors = document.querySelectorAll('.failure');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
+        }
+
+            }
+            if (form.username.value !== ""&&form.username.value!=="Eswar" && form.password.value !== ""&&form.password.value!=="Admin") {
+                // Do form submission
+                document.querySelector(".failure").classList.add("display-success");
+                document.querySelector(".failure").innerHTML = "WRONG CREDENTIALS";
+                event.preventDefault();
+
+
+                // remove success statement if credentials are wrong
+
+
+let errors = document.querySelectorAll('.register-success');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
+        }
+
+            }
+            }
+        
+    
 }
-   
-   function surendraPLAN(){
+
+
+function allPLAN(e){
     if(   document.getElementById("username").value == "Surendra"
 && document.getElementById("password").value == "Plan" ){
-        // document.writE("NAME: "+vinayakanagar.PLANNING.NAME+"<br>" +"DESIGNATION: "+vinayakanagar.PLANNING.DESIGNATION+"<br> "+"DOB:"+vinayakanagar.PLANNING.DOB+"<br> "+"CFMS: "+vinayakanagar.PLANNING.CFMS+"<br> "+"HRMS: "+vinayakanagar.PLANNING.HRMS+"<br> "+"MOBILE: " +vinayakanagar.PLANNING.MOBILE+"<br> "+" ADHAR: " + vinayakanagar.PLANNING.ADHAR);
-        let  sankar = document.getElementById('input').value.toUpperCase();
-    let result = vinayakanagar.PLANNING[sankar];
-    document.getElementById("displayName").textContent = result;
-    }
-   
-  //ERROR MESSAGE CODE 
-    function showError(errorElement, errorMessage) {
+               document.getElementById("demo2").innerHTML="NAME: "+vinayakanagar.PLANNING.NAME+"<br>" +"DESIGNATION: "+vinayakanagar.PLANNING.DESIGNATION+"<br> "+"DOB:"+vinayakanagar.PLANNING.DOB+"<br> "+"CFMS: "+vinayakanagar.PLANNING.CFMS+"<br> "+"HRMS: "+vinayakanagar.PLANNING.HRMS+"<br> "+"MOBILE: " +vinayakanagar.PLANNING.MOBILE+"<br> "+" ADHAR: " + vinayakanagar.PLANNING.ADHAR;
+            document.getElementById('demo2').style.color='white';
+            }
+            function showError(errorElement, errorMessage) {
             document.querySelector("." + errorElement).classList.add("display-error");
             document.querySelector("." + errorElement).innerHTML = errorMessage;
         }
@@ -395,7 +479,7 @@ let errors = document.querySelectorAll('.failure');
                 event.preventDefault();
 
 
-                // experiment for clear error credentials
+// experiment for clear error credentials
 
 
 let errors = document.querySelectorAll('.failure');
@@ -403,6 +487,86 @@ let errors = document.querySelectorAll('.failure');
             errors[i].classList.remove('display-error');
             errors[i].innerHTML = '';
         }
+
+            }
+
+
+
+            if (form.username.value !== ""&&form.username.value!=="Surendra" && form.password.value !== ""&&form.password.value!=="Plan") {
+                // Do form submission
+                document.querySelector(".failure").classList.add("display-success");
+                document.querySelector(".failure").innerHTML = "WRONG CREDENTIALS";
+                event.preventDefault();
+
+
+                // remove success statement if credentials are wrong
+
+
+let errors = document.querySelectorAll('.register-success');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
+        }
+
+            }
+            }
+        }
+
+
+
+   
+   function surendraPLAN(e){
+    
+    if(   document.getElementById("username").value == "Surendra"
+&& document.getElementById("password").value == "Plan" ){
+    let info=document.getElementById('specify').value.toUpperCase();
+           let result=vinayakanagar.PLANNING[info];
+        
+           document.getElementById('demo').textContent=result; 
+            document.getElementById('demo').style.color='white';   }
+   
+            function showError(errorElement, errorMessage) {
+            document.querySelector("." + errorElement).classList.add("display-error");
+            document.querySelector("." + errorElement).innerHTML = errorMessage;
+        }
+
+        function clearError() {
+            let errors = document.querySelectorAll('.error');
+            for (let error of errors) {
+                error.classList.remove("display-error");
+            }
+        }
+
+        let form = document.forms['sign-up-form'];
+
+        form.onsubmit = function(event) {
+            clearError();
+
+            if (form.username.value === "") {
+                showError('username-error', "Please enter a username.");
+                event.preventDefault();
+            }
+
+            if (form.password.value === "") {
+                showError('password-error', "Please enter a password.");
+                event.preventDefault();
+            }
+            if (form.username.value !== ""&&form.username.value==="Surendra" && form.password.value !== ""&&form.password.value==="Plan") {
+                // Do form submission
+                document.querySelector(".register-success").classList.add("display-success");
+                document.querySelector(".register-success").innerHTML = "Registration successful!";
+                event.preventDefault();
+
+// remove failure statement if credentials are right 
+
+
+let errors = document.querySelectorAll('.failure');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
+        }
+
+
             }
             if (form.username.value !== ""&&form.username.value!=="Surendra" && form.password.value !== ""&&form.password.value!=="Plan") {
                 // Do form submission
@@ -410,58 +574,21 @@ let errors = document.querySelectorAll('.failure');
                 document.querySelector(".failure").innerHTML = "WRONG CREDENTIALS";
                 event.preventDefault();
 
-            }
+// remove success statement if credentials are wrong
+
+
+let errors = document.querySelectorAll('.register-success');
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].classList.remove('display-error');
+            errors[i].innerHTML = '';
         }
 
-//ERROR MESSAGE CODE END 
 
-
+            }
+  
+            }
 }
-
-
-
-//errormessage and errormessage clear code here
-
-
-// function showError(errorElement, errorMessage) {
-//             document.querySelector("." + errorElement).classList.add("display-error");
-//             document.querySelector("." + errorElement).innerHTML = errorMessage;
-//         }
-
-//         function clearError() {
-//             let errors = document.querySelectorAll('.error');
-//             for (let error of errors) {
-//                 error.classList.remove("display-error");
-//             }
-//         }
-
-//         let form = document.forms['sign-up-form'];
-
-//         form.onsubmit = function(event) {
-//             clearError();
-
-//             if (form.username.value === "") {
-//                 showError('username-error', "Please enter a username.");
-//                 event.preventDefault();
-//             }
-
-//             if (form.password.value === "") {
-//                 showError('password-error', "Please enter a password.");
-//                 event.preventDefault();
-//             }
-
-//             if (form.username.value !== "" && form.password.value !== "") {
-//                 // Do form submission
-//                 document.querySelector(".register-success").classList.add("display-success");
-//                 document.querySelector(".register-success").innerHTML = "Registration successful!";
-//                 event.preventDefault();
-//             }
-//         }
-
-
-
-
+   
     </script>
-
 </body>
 </html>
